@@ -10,7 +10,7 @@ namespace DAL.Models
     public class DBConnection
     {
         public OleDbConnection Connection { get; set; }
-        public List<OleDbCommand> Cmds { get; set; }
+        public Dictionary<string, OleDbCommand> Cmds { get; set; }
         public OleDbDataReader Reader { get; set; }
         public DBConnection()
         {
@@ -20,38 +20,38 @@ namespace DAL.Models
             Connection = new OleDbConnection();
             Connection.ConnectionString = conStr;
 
-            Cmds = new List<OleDbCommand>();
+            Cmds = new Dictionary<string, OleDbCommand>();
             var cmd = new OleDbCommand();
             cmd.Connection = Connection;
             cmd.CommandType = CommandType.Text;
-            Cmds.Add(cmd);
+            Cmds.Add("default", cmd);
         }
 
-        public void ExecuteCmd(string query, int cmdIndex = 0)
+        public void ExecuteCmd(string query, string cmdIdentifier = "default")
         {
             Connection.Open();
             if (!String.IsNullOrEmpty(query))
-                Cmds[cmdIndex].CommandText = query;
+                Cmds[cmdIdentifier].CommandText = query;
 
-            Reader = Cmds[cmdIndex].ExecuteReader();
+            Reader = Cmds[cmdIdentifier].ExecuteReader();
         }
 
-        public void ExecuteNonQuery(string query, int cmdIndex = 0)
+        public void ExecuteNonQuery(string query, string cmdIdentifier = "default")
         {
             Connection.Open();
             if (!String.IsNullOrEmpty(query))
-                Cmds[cmdIndex].CommandText = query;
+                Cmds[cmdIdentifier].CommandText = query;
 
-            Cmds[cmdIndex].ExecuteNonQuery();
+            Cmds[cmdIdentifier].ExecuteNonQuery();
         }
 
-        public void AddCmd()
+        public void AddCmd(string cmdIdentifier)
         {
             OleDbCommand cmd = new OleDbCommand();
             cmd.Connection = Connection;
             cmd.CommandType = CommandType.Text;
 
-            Cmds.Add(cmd);
+            Cmds.Add(cmdIdentifier, cmd);
         }
     }
 }

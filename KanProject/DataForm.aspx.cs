@@ -27,7 +27,7 @@ namespace KanProject
                 OleDbDataAdapter myAdapter = new OleDbDataAdapter();
                 DataSet myDataSet = new DataSet();
 
-                myAdapter.SelectCommand = dbConnection.Cmds[0];
+                myAdapter.SelectCommand = dbConnection.Cmds["default"];
                 myAdapter.Fill(myDataSet, "Orders");
                 GridView1.DataSource = myDataSet;
                 GridView1.DataBind();

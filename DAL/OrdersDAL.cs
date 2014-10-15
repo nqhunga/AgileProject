@@ -11,23 +11,23 @@ namespace DAL
         public static DBConnection GetOrders(User user)
         {
             DBConnection dbConnection = new DBConnection();
-            dbConnection.AddCmd();
+            dbConnection.AddCmd("SecondCmd");
             switch (user.UserLevel)
             {
                 case UserLevel.Admin:
-                    dbConnection.Cmds[0].CommandText = "SELECT * FROM Orders";
+                    dbConnection.Cmds["default"].CommandText = "SELECT * FROM Orders";
                     break;
                 case UserLevel.Seller:
-                    dbConnection.ExecuteCmd("SELECT * FROM Salesmen WHERE Name='" + user.UserName + "'", 1);
+                    dbConnection.ExecuteCmd("SELECT * FROM Salesmen WHERE Name='" + user.UserName + "'", "SecondCmd");
                     dbConnection.Reader.Read();
 
-                    dbConnection.Cmds[0].CommandText = "SELECT * FROM Orders WHERE CustID IN (SELECT CustID FROM Customer WHERE Area='" + dbConnection.Reader["Area"].ToString() + "')";
+                    dbConnection.Cmds["default"].CommandText = "SELECT * FROM Orders WHERE CustID IN (SELECT CustID FROM Customer WHERE Area='" + dbConnection.Reader["Area"].ToString() + "')";
                     break;
                 case UserLevel.Client:
-                    dbConnection.ExecuteCmd("SELECT * FROM Customer WHERE Name='" + user.UserName + "'", 1);
+                    dbConnection.ExecuteCmd("SELECT * FROM Customer WHERE Name='" + user.UserName + "'", "SecondCmd");
                     dbConnection.Reader.Read();
 
-                    dbConnection.Cmds[0].CommandText = "SELECT * FROM Orders WHERE CustID=" + dbConnection.Reader["CustID"].ToString() + "";
+                    dbConnection.Cmds["default"].CommandText = "SELECT * FROM Orders WHERE CustID=" + dbConnection.Reader["CustID"].ToString() + "";
                     break;
             }
             dbConnection.Connection.Close();
