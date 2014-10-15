@@ -16,8 +16,8 @@ namespace KanProject
             if (Page.IsPostBack)
             {
 
-                var userName = username.Text;
-                var passWord = password.Text;
+                var userName = UserName.Text;
+                var passWord = PassWord.Text;
 
                 if (!String.IsNullOrEmpty(userName) && !String.IsNullOrEmpty(passWord))
                 {

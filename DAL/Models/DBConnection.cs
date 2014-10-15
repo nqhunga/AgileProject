@@ -36,6 +36,15 @@ namespace DAL.Models
             Reader = Cmds[cmdIndex].ExecuteReader();
         }
 
+        public void ExecuteNonQuery(string query, int cmdIndex = 0)
+        {
+            Connection.Open();
+            if (!String.IsNullOrEmpty(query))
+                Cmds[cmdIndex].CommandText = query;
+
+            Cmds[cmdIndex].ExecuteNonQuery();
+        }
+
         public void AddCmd()
         {
             OleDbCommand cmd = new OleDbCommand();

@@ -4,11 +4,11 @@
     <form id="form1" runat="server">
         <div>
             <label for="username">Username</label>
-            <asp:TextBox runat="server" ID="username" ></asp:TextBox>
+            <asp:TextBox runat="server" ID="UserName" ></asp:TextBox>
             <asp:RequiredFieldValidator runat="server" controltovalidate="username" ID="nameValidator" ErrorMessage="Name is required!"></asp:RequiredFieldValidator>
             <br />
             <label for="password">Password</label>
-            <asp:TextBox runat="server" ID="password" TextMode="Password"></asp:TextBox>
+            <asp:TextBox runat="server" ID="PassWord" TextMode="Password"></asp:TextBox>
             <asp:RequiredFieldValidator runat="server" controltovalidate="password" ID="passwordValidator" ErrorMessage="Password is required!"></asp:RequiredFieldValidator>
             <br />
             <input type="submit" />

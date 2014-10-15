@@ -22,13 +22,13 @@ namespace KanProject {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// username control.
+        /// UserName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox username;
+        protected global::System.Web.UI.WebControls.TextBox UserName;
         
         /// <summary>
         /// nameValidator control.
@@ -40,13 +40,13 @@ namespace KanProject {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator nameValidator;
         
         /// <summary>
-        /// password control.
+        /// PassWord control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox password;
+        protected global::System.Web.UI.WebControls.TextBox PassWord;
         
         /// <summary>
         /// passwordValidator control.
