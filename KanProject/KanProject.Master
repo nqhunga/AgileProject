@@ -6,6 +6,8 @@
 <head runat="server">
     <title></title>
     <script src="scripts/jquery-1.11.1.js"></script>
+    <script src="scripts/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>

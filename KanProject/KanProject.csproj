@@ -59,6 +59,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\jquery-ui.css" />
     <Content Include="KanProject.Master" />
     <None Include="Properties\PublishProfiles\kanapp.pubxml" />
     <None Include="Web.Debug.config">
@@ -75,6 +76,7 @@
     <Content Include="Default.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="scripts\jquery-1.11.1.js" />
+    <Content Include="scripts\jquery-ui.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
