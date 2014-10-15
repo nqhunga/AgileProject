@@ -14,7 +14,7 @@ namespace DAL.Models
         public OleDbDataReader Reader { get; set; }
         public DBConnection()
         {
-            string projectPath = @"c:\users\cashdavi\documents\visual studio 2013\Projects\KanProject\DAL\data\UserLevelsAndCustomerOrders2014.mdb;";
+            string projectPath = @"|DataDirectory|\UserLevelsAndCustomerOrders2014.mdb;";
             string conStr = "Provider = Microsoft.Jet.OLEDB.4.0;" + "Data Source = " + projectPath;
 
             Connection = new OleDbConnection();
