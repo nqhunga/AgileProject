@@ -59,6 +59,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Properties\PublishProfiles\kanapp.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -69,6 +70,7 @@
   <ItemGroup>
     <Content Include="api\Test.asmx" />
     <Content Include="DataForm.aspx" />
+    <Content Include="App_Data\UserLevelsAndCustomerOrders2014.mdb" />
     <Content Include="Login.aspx" />
     <Content Include="scripts\jquery-1.11.1.js" />
     <Content Include="Web.config" />
@@ -100,6 +102,9 @@
       <Project>{173d5673-5fb2-4f16-a25d-1d76214bd855}</Project>
       <Name>DAL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="data\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
