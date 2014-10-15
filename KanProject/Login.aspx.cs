@@ -15,12 +15,13 @@ namespace KanProject
         {
             if (Page.IsPostBack)
             {
-                var username = Request.Form["username"];
-                var password = Request.Form["password"];
 
-                if (!String.IsNullOrEmpty(username) && !String.IsNullOrEmpty(password))
+                var userName = username.Text;
+                var passWord = password.Text;
+
+                if (!String.IsNullOrEmpty(userName) && !String.IsNullOrEmpty(passWord))
                 {
-                    User user = UsersDAL.Login(username, password);
+                    User user = UsersDAL.Login(userName, passWord);
                     if (user != null)
                     {
                         Session["User"] = user;

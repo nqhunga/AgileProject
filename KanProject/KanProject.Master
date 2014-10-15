@@ -1,0 +1,18 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="KanProject.master.cs" Inherits="KanProject.KanProject" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <script src="scripts/jquery-1.11.1.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div>
+        <asp:ContentPlaceHolder ID="plhContentMain" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+</body>
+</html>
