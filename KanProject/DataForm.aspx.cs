@@ -17,7 +17,7 @@ namespace KanProject
         {
             User user = (User)Session["User"];
 
-            if (String.IsNullOrEmpty(user.UserName))
+            if (user == null || String.IsNullOrEmpty(user.UserName))
                 Response.Redirect("Login.aspx");
 
             if (!Page.IsPostBack)
