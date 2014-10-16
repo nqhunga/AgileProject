@@ -59,7 +59,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="api\Projects.asmx" />
     <Content Include="css\jquery-ui.css" />
+    <Content Include="css\kanboard.css" />
     <Content Include="KanProject.Master" />
     <None Include="Properties\PublishProfiles\kanapp.pubxml" />
     <None Include="Web.Debug.config">
@@ -80,6 +82,10 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="api\Projects.asmx.cs">
+      <DependentUpon>Projects.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="api\Test.asmx.cs">
       <DependentUpon>Test.asmx</DependentUpon>
       <SubType>Component</SubType>

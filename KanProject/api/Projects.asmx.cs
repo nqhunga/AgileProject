@@ -7,7 +7,7 @@ using System.Web.Services;
 namespace KanProject.api
 {
     /// <summary>
-    /// Summary description for Test
+    /// Summary description for Projects
     /// </summary>
     [System.Web.Script.Services.ScriptService]
     [WebService(Namespace = "http://tempuri.org/")]
@@ -15,18 +15,18 @@ namespace KanProject.api
     [System.ComponentModel.ToolboxItem(false)]
     // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
     // [System.Web.Script.Services.ScriptService]
-    public class Test : System.Web.Services.WebService
+    public class Projects : System.Web.Services.WebService
     {
         [WebMethod]
-        public object HelloWorld()
+        public object SaveProject()
         {
-            return new { message = "Hello World" };
+            return new { message = "SAVING NOT YET IMPLEMENTED" };
         }
 
-        [System.Web.Services.WebMethod]
-        public object GetAllProducts()
+        [WebMethod]
+        public object CheckProject()
         {
-            return new { message = "Success!" };
+            return new { message = "CHECKING NOT YET IMPLEMENTED" };
         }
     }
 }

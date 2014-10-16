@@ -13,10 +13,7 @@ namespace KanProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            User user = (User)Session["User"];
-
-            if (user == null || String.IsNullOrEmpty(user.UserName))
-                Response.Redirect("Login.aspx");
+            
         }
     }
 }

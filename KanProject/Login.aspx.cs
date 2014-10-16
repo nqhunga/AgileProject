@@ -13,25 +13,29 @@ namespace KanProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Page.IsPostBack)
-            {
+            //if (Page.IsPostBack)
+            //{
 
-                var userName = UserName.Text;
-                var passWord = PassWord.Text;
+            //    var userName = UserName.Text;
+            //    var passWord = PassWord.Text;
 
-                if (!String.IsNullOrEmpty(userName) && !String.IsNullOrEmpty(passWord))
-                {
-                    User user = UsersDAL.Login(userName, passWord);
-                    if (user != null)
-                    {
-                        Session["User"] = user;
-                        Response.Redirect("DataForm.aspx");
-                    }
-                    else
-                        ErrorPanel.Visible = true;
-                }
+            //    if (!String.IsNullOrEmpty(userName) && !String.IsNullOrEmpty(passWord))
+            //    {
+            //        User user = UsersDAL.Login(userName, passWord);
+            //        if (user != null)
+            //        {
+            //            Session["User"] = user;
+            //            Response.Redirect("Default.aspx");
+            //        }
+            //        else
+            //            ErrorPanel.Visible = true;
+            //    }
+            //}
 
-            }
+            User user = UsersDAL.Login("administrator", "admin");
+            Session["User"] = user;
+
+            Response.Redirect("Default.aspx");
         }
     }
 }

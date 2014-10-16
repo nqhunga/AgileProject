@@ -1,6 +1,15 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/KanProject.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="KanProject.Login" %>
+﻿<%@ Page Title="" Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="KanProject.Login" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="plhContentMain" runat="server">
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <script src="scripts/jquery-1.11.1.js"></script>
+    <script src="scripts/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css" />
+</head>
+<body>
     <form id="form1" runat="server">
         <div>
             <label for="username">Username</label>
@@ -17,4 +26,5 @@
             </asp:Panel>
         </div>
     </form>
-</asp:Content>
+</body>
+</html>

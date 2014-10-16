@@ -1,0 +1,30 @@
+﻿#kanboard {
+    border-collapse: collapse;
+    width: 100%;
+    min-height: 200px;
+}
+.draggable-placeholder {
+    border: 2px dashed #000;
+    background: #fafafa;
+    height: 70px;
+    margin-bottom: 10px;
+}
+#kanboard, #kanboard th, #kanboard td {
+    border: 1px solid black;
+}
+#kanboard th{
+    text-align: left;
+}
+#kanboard td{
+    width: 33%;   
+}
+#myElement{
+    position: relative;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #000;
+    padding: 5px;
+    font-size: 95%;
+    height: 65px;
+    width: 90%;
+}
