@@ -7,7 +7,7 @@
         <tr>
             <th>Column 1</th>
             <th>Column 2</th>
-            <th>Column 3</th>
+            <th>Test</th>
         </tr>
         <tr>
             <td class="column"><div id="myElement">Draggable element</div></td>
