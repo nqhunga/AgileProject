@@ -8,13 +8,19 @@
     <script src="scripts/jquery-1.11.1.js"></script>
     <script src="scripts/jquery-ui.js"></script>
     <link rel="stylesheet" type="text/css" href="css/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="css/general.css"/>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <div>
-        <asp:ContentPlaceHolder ID="plhContentMain" runat="server">
-        </asp:ContentPlaceHolder>
-    </div>
+    <form id="form1" runat="server">
+        <div style="text-align:right; margin-bottom: 12px;">
+            <asp:Button runat="server" ID="btnLogout" OnClick="btnLogout_Click"/>
+        </div>
+        <div>
+            <asp:ContentPlaceHolder ID="plhContentMain" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
 </body>
 </html>

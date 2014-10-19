@@ -27,6 +27,7 @@ namespace KanProject
                 if (user != null)
                 {
                     Session["User"] = user;
+
                     Response.Redirect("Default.aspx");
                 }
                 else

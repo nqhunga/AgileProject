@@ -3,9 +3,7 @@
     
 </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="plhContentMain" runat="server">
-    <form id="form1" runat="server">
     <div>
         <asp:GridView runat="server" ID="GridView1"></asp:GridView>
     </div>
-    </form>
 </asp:Content>
