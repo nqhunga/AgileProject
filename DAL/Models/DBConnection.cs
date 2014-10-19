@@ -65,5 +65,44 @@ namespace DAL.Models
             if (!Connection.State.Equals(ConnectionState.Closed))
                 Connection.Close();
         }
+
+        // SEE UsersDAL.GetAllUsers FOR EXAMPLE
+        // string query: SQL query to execute
+        // BuildObject: Function for mapping the object
+        public IEnumerable<T> ExecuteTypedList<T>(string query, Func<IDataRecord, T> BuildObject, string cmdIdentifier = "default")
+        {
+            Open();
+            if (!String.IsNullOrEmpty(query))
+                Cmds[cmdIdentifier].CommandText = query;
+
+            Reader = Cmds[cmdIdentifier].ExecuteReader();
+
+            try
+            {
+                while (Reader.Read())
+                {
+                    yield return BuildObject(Reader);
+                }
+            }
+            finally
+            {
+                Reader.Dispose();
+            }
+        }
+
+        public static IEnumerable<T> GetData<T>(IDataReader reader, Func<IDataRecord, T> BuildObject)
+        {
+            try
+            {
+                while (reader.Read())
+                {
+                    yield return BuildObject(reader);
+                }
+            }
+            finally
+            {
+                reader.Dispose();
+            }
+        }
     }
 }

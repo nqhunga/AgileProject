@@ -18,6 +18,8 @@ namespace KanProject
             numCols = 5;
 
             Kanboard.Project = ProjectsDAL.GetProject();
+
+            List<User> users = UsersDAL.GetAllUsers();
         }
     }
 }

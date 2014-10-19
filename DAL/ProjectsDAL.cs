@@ -9,6 +9,8 @@ namespace DAL
     public class ProjectsDAL
     {
         public static Project GetProject() {
+            // TEST DATA
+
             Project project = new Project();
             project.ProjectName = "TestProject";
 

@@ -9,6 +9,17 @@ namespace DAL
 {
     public class UsersDAL
     {
+        public static List<User> GetAllUsers()
+        {
+            List<User> users = new List<User>();
+
+            DBConnection connection = new DBConnection();
+
+            users = connection.ExecuteTypedList<User>("SELECT * FROM UserData", User.Create).ToList();
+
+            return users;
+        }
+
         public static User RegisterUser(string username, string password)
         {
             User user = new User();

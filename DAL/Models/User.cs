@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data;
 
 namespace DAL.Models
 {
@@ -15,5 +16,13 @@ namespace DAL.Models
     {
         public string UserName { get; set; }
         public UserLevel UserLevel { get; set; }
+
+        public static User Create(IDataRecord record)
+        {
+            return new User
+            {
+                UserName = record["Name"].ToString()
+            };
+        }
     }
 }
