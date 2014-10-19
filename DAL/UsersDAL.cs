@@ -9,32 +9,6 @@ namespace DAL
 {
     public class UsersDAL
     {
-        public static User Login(string username, string password)
-        {
-            DBConnection dbConnection = new DBConnection();
-            dbConnection.ExecuteCmd("SELECT * FROM UserData WHERE Name='" + username + "'");
-
-            if (dbConnection.Reader.Read())
-            {
-                var pass = dbConnection.Reader["Password"].ToString();
-                var name = dbConnection.Reader["Name"].ToString();
-                var level = dbConnection.Reader["UserLevelID"].ToString();
-
-                dbConnection.Connection.Close();
-
-                if (!String.IsNullOrEmpty(pass) && pass == password)
-                {
-                    User user = new User();
-                    user.UserName = name;
-                    user.UserLevel = (UserLevel)Enum.Parse(typeof(UserLevel), level);
-
-                    return user;
-                }
-            }
-
-            return null;
-        }
-
         public static User RegisterUser(string username, string password)
         {
             User user = new User();
@@ -42,12 +16,22 @@ namespace DAL
             string hash = CreateHash(password);
 
             DBConnection dbConnection = new DBConnection();
-            dbConnection.ExecuteNonQuery(""+
-            "INSERT INTO "+ 
-            "UserData (UserLevelID, [Name], [Password], PasswordHash) " + 
-            "VALUES (1,'"+ username +"','"+ password +"', '"+ hash +"');");
+            dbConnection.AddCmd("UsernameCheck");
+            dbConnection.ExecuteCmd("SELECT * FROM UserData WHERE Ucase(Name)=Ucase('" + username + "')", "UsernameCheck");
 
-            return user;
+            if (!dbConnection.Reader.Read()) {
+                dbConnection.ExecuteNonQuery("" +
+                "INSERT INTO " +
+                "UserData (UserLevelID, [Name], [Password]) " +
+                "VALUES (1,'" + username + "','" + hash + "');");
+
+                user.UserName = username;
+                user.UserLevel = UserLevel.Admin;
+
+                return user;
+            }
+
+            return null;
         }
 
         public static User ValidateUser(string username, string password)
@@ -55,14 +39,20 @@ namespace DAL
             User user = new User();
 
             DBConnection dbConnection = new DBConnection();
-            dbConnection.ExecuteCmd("SELECT * FROM UserData WHERE Name='" + username + "'");
+            dbConnection.ExecuteCmd("SELECT * FROM UserData WHERE Ucase(Name)=Ucase('" + username + "')");
 
-            dbConnection.Reader.Read();
-            string correctHash = dbConnection.Reader["PasswordHash"].ToString();
+            if (dbConnection.Reader.Read())
+            {
+                string correctHash = dbConnection.Reader["Password"].ToString();
 
-            bool isValid = ValidatePassword(password, correctHash);
-
-            return user;
+                if (ValidatePassword(password, correctHash))
+                {
+                    user.UserName = dbConnection.Reader["Name"].ToString();
+                    user.UserLevel = (UserLevel)Enum.Parse(typeof(UserLevel), dbConnection.Reader["UserLevelID"].ToString());
+                    return user;
+                };
+            }
+            return null;
         }
 
         public static string CreateHash(string password)

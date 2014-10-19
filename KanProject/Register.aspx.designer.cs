@@ -10,7 +10,7 @@
 namespace KanProject {
     
     
-    public partial class Login {
+    public partial class Register {
         
         /// <summary>
         /// form1 control.

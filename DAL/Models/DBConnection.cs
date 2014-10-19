@@ -29,7 +29,7 @@ namespace DAL.Models
 
         public void ExecuteCmd(string query, string cmdIdentifier = "default")
         {
-            Connection.Open();
+            Open();
             if (!String.IsNullOrEmpty(query))
                 Cmds[cmdIdentifier].CommandText = query;
 
@@ -38,7 +38,7 @@ namespace DAL.Models
 
         public void ExecuteNonQuery(string query, string cmdIdentifier = "default")
         {
-            Connection.Open();
+            Open();
             if (!String.IsNullOrEmpty(query))
                 Cmds[cmdIdentifier].CommandText = query;
 
@@ -52,6 +52,18 @@ namespace DAL.Models
             cmd.CommandType = CommandType.Text;
 
             Cmds.Add(cmdIdentifier, cmd);
+        }
+
+        public void Open()
+        {
+            if (!Connection.State.Equals(ConnectionState.Open))
+                Connection.Open();
+        }
+
+        public void Close()
+        {
+            if (!Connection.State.Equals(ConnectionState.Closed))
+                Connection.Close();
         }
     }
 }

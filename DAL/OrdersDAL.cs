@@ -30,7 +30,7 @@ namespace DAL
                     dbConnection.Cmds["default"].CommandText = "SELECT * FROM Orders WHERE CustID=" + dbConnection.Reader["CustID"].ToString() + "";
                     break;
             }
-            dbConnection.Connection.Close();
+            dbConnection.Close();
 
             return dbConnection;
         }
