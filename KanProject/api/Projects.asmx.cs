@@ -18,7 +18,7 @@ namespace KanProject.api
     public class Projects : System.Web.Services.WebService
     {
         [WebMethod]
-        public object SaveProject()
+        public object SaveProject(int taskId, int colIndex, int index)
         {
             return new { message = "SAVING NOT YET IMPLEMENTED" };
         }

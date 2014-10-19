@@ -1,17 +1,16 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using System.Web.UI;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("KanProject")]
+[assembly: AssemblyTitle("CustomControls")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("PHKK")]
-[assembly: AssemblyProduct("KanProject")]
-[assembly: AssemblyCopyright("Copyright © PHKK 2014")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("CustomControls")]
+[assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -21,7 +20,7 @@ using System.Web.UI;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("83b74d11-4921-4a92-b95c-c98988987d56")]
+[assembly: Guid("f5e2cc4b-0736-4c28-8645-fcbe1c90ef59")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -30,9 +29,8 @@ using System.Web.UI;
 //      Build Number
 //      Revision
 //
-// You can specify all the values or you can default the Revision and Build Numbers 
+// You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
+// [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-
-[assembly: TagPrefix("ServerControl1", "aspSample")]

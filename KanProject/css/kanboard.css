@@ -1,4 +1,4 @@
-﻿#kanboard {
+﻿.kanboard {
     border-collapse: collapse;
     width: 100%;
     min-height: 200px;
@@ -9,16 +9,16 @@
     height: 70px;
     margin-bottom: 10px;
 }
-#kanboard, #kanboard th, #kanboard td {
+.kanboard, .kanboard th, .kanboard td {
     border: 1px solid black;
 }
-#kanboard th{
+.kanboard th{
     text-align: left;
 }
-#kanboard td{
-    width: 33%;   
+.kanboard td{
+    width: 20%;   
 }
-#myElement{
+.task{
     position: relative;
     margin-right: 5px;
     margin-bottom: 10px;
