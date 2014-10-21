@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="api\Projects.asmx" />
+    <Content Include="App_Data\AccessDB.mdb" />
     <Content Include="css\general.css" />
     <Content Include="css\jquery-ui.css" />
     <Content Include="css\kanboard.css" />
