@@ -718,6 +718,9 @@ button.ui-button::-moz-focus-inner {
 .ui-sortable-handle {
 	-ms-touch-action: none;
 	touch-action: none;
+	margin-left: auto ;
+  	margin-right: auto ;
+  	width:95%;
 }
 .ui-spinner {
 	position: relative;
@@ -1187,7 +1190,7 @@ body .ui-tooltip {
 .ui-corner-all,
 .ui-corner-top,
 .ui-corner-left,
-.ui-corner-tl {
+.ui-corner-tl {ui
 	border-top-left-radius: 4px;
 }
 .ui-corner-all,
