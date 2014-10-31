@@ -69,6 +69,7 @@
     <Content Include="css\jquery-ui.css" />
     <Content Include="css\kanboard.css" />
     <Content Include="KanProject.Master" />
+    <Content Include="comment.ascx" />
     <None Include="Properties\PublishProfiles\kanapp.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -133,6 +134,13 @@
     </Compile>
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="comment.ascx.cs">
+      <DependentUpon>comment.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="comment.ascx.designer.cs">
+      <DependentUpon>comment.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
